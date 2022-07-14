@@ -1,0 +1,6 @@
+ELASTICSEARCH_USERNAME=kibana_system
+ELASTICSEARCH_PASSWORD=changeme
+ELASTICSEARCH_HOSTS=http://host.docker.internal:9200
+XPACK_REPORTING_ENCRYPTIONKEY=fffooooffffooofffooofofoofffooofoo
+XPACK_SECURITY_ENCRYPTIONKEY=fffooooffffooofffooofofoofffooofoo
+NODE_OPTIONS="--max-old-space-size=4096"

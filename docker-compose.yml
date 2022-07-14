@@ -1,0 +1,181 @@
+# version: "3.8"
+# services:
+#         elasticsearch:
+#                 container_name: elasticsearch
+#                 image: docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+#                 volumes:
+#                         - ./my-es-data:/data
+#                         - ./my-es-logs:/logs
+#                 ports:
+#                         - 9220:9200
+#                 environment:
+#                         - path.data=/data
+#                         - path.logs=/logs
+#                         - discovery.type=single-node
+#                         - xpack.security.enabled=true
+#         kibana:
+#                 image: docker.elastic.co/kibana/kibana:6.2.4
+#                 container_name: kibana
+#                 volumes:
+#                         - ./kibana.yml:/usr/share/kibana/config/kibana.yml
+#                 ports:
+#                         - 5621:5601
+
+
+# version: '3.9'
+
+# docker run --env-file ./elasticsearch-envfile --ulimit memlock=-1:-1 --network=esnet -p 9201:9200 --name myes docker.elastic.co/elasticsearch/elasticsearch:7.15.1
+# docker run --env-file ./kibana-envfile --memory=1gb --memory-swap=2gb --memory-swappiness=60 --network=esnet -p 5602:5601 --name mykbn docker.elastic.co/kibana/kibana:7.15.1
+
+# services:
+#   elasticsearch:
+#     image: "docker.elastic.co/elasticsearch/elasticsearch:8.1.0"
+#     ulimits:
+#       memlock:
+#         soft: -1
+#         hard: -1
+#     environment:
+#       - "network.host=elasticsearch"
+#       - "discovery.type=single-node"
+#       - "xpack.license.self_generated.type=trial"
+#       - "bootstrap.memory_lock=true"
+#       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+#       - "xpack.security.enabled=true"
+#       - "xpack.security.audit.enabled=true"
+#       - "ELASTIC_USERNAME=elastic"
+#       - "ELASTIC_PASSWORD=${ELASTIC_PASSWORD}"
+    # volumes: ["esdata-upgradetest:/usr/share/elasticsearch/data"]
+  #   networks: ["esnet"]
+  #   ports: ["9201:9200"]
+
+
+  # kibana:
+  #   image: "docker.elastic.co/kibana/kibana:8.1.0"
+  #   environment:
+  #     - "ELASTICSEARCH_URL=http://elasticsearch:9200"
+  #     - "ELASTICSEARCH_USERNAME=kibana_system"
+  #     - "ELASTICSEARCH_PASSWORD=${KIBANA_PASSWORD}"
+  #     - "XPACK_REPORTING_ENCRYPTIONKEY=fffooooffffooofffooofofoofffooofoo"
+  #     - "XPACK_SECURITY_ENCRYPTIONKEY=fffooooffffooofffooofofoofffooofoo"
+  #     - "XPACK_REPORTING_ROLES_ENABLED=false"
+  #   networks: ["esnet"]
+  #   ports: ["5602:5601"]
+    #deploy:
+      #resources:
+        #limits:
+          #memory: 1gb
+          #memory_swap: 2gb
+
+# volumes:
+#   esdata-upgradetest:
+#     driver: "local"
+
+# networks:
+#   esnet:
+
+
+
+#version: "3"
+#services:
+#  elasticsearch:
+#    image: docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+#    environment:
+#      - cluster.name=docker-cluster
+#      - bootstrap.memory_lock=true
+#      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+#    ulimits:
+#      memlock:
+#        soft: -1
+#        hard: -1
+#    volumes:
+#      - /usr/share/elasticsearch/data
+#    ports:
+#      - 9200:9200
+#  kibana:
+#    image: docker.elastic.co/kibana/kibana:6.2.4
+#    ports:
+#      - 5601:5601
+#    depends_on:
+#      - elasticsearch
+#
+
+
+version: "2.2"
+
+services:
+  setup:
+    image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+    user: "0"
+    command: >
+      bash -c '
+        if [ x${ELASTIC_PASSWORD} == x ]; then
+          echo "Set the ELASTIC_PASSWORD environment variable in the .env file";
+          exit 1;
+        elif [ x${KIBANA_PASSWORD} == x ]; then
+          echo "Set the KIBANA_PASSWORD environment variable in the .env file";
+          exit 1;
+        fi;
+        echo "Setting file permissions"
+        echo "Setting kibana_system password";
+        until curl -s -X POST -u elastic:${ELASTIC_PASSWORD} -H "Content-Type: application/json" http://es01:9200/_security/user/kibana_system/_password -d "{\"password\":\"${KIBANA_PASSWORD}\"}" | grep -q "^{}"; do sleep 10; done;
+        echo "All done!";
+      '
+
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+    volumes:
+      - esdata01:/usr/share/elasticsearch/data
+    ports:
+      - ${ES_PORT}:9200
+    environment:
+      - node.name=es01
+      - cluster.name=${CLUSTER_NAME}
+      - discovery.type=single-node
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+      - bootstrap.memory_lock=true
+      - xpack.security.enabled=true
+      - xpack.security.authc.api_key.enabled=true
+      - xpack.license.self_generated.type=${LICENSE}
+    mem_limit: ${MEM_LIMIT}
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -s http://localhost:9200 | grep -q 'missing authentication credentials'",
+        ]
+      interval: 10s
+      timeout: 10s
+      retries: 120
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:${STACK_VERSION}
+    volumes:
+      - kibanadata:/usr/share/kibana/data
+      - ./kibana.yml:/usr/share/kibana/config/kibana.yml
+    ports:
+      - ${KIBANA_PORT}:5601
+    environment:
+      - SERVERNAME=kibana
+      - ELASTICSEARCH_HOSTS=http://es01:9200
+      - ELASTICSEARCH_USERNAME=kibana_system
+      - ELASTICSEARCH_PASSWORD=${KIBANA_PASSWORD}
+    mem_limit: ${MEM_LIMIT}
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -s -I http://localhost:5601 | grep -q 'HTTP/1.1 302 Found'",
+        ]
+      interval: 10s
+      timeout: 10s
+      retries: 120
+
+volumes:
+  esdata01:
+    driver: local
+  kibanadata:
+    driver: local

@@ -1,0 +1,5 @@
+ELASTICSEARCH_PASSWORD=changeme
+ELASTICSEARCH_HOSTS=http://myes:9200
+ELASTICSEARCH_USERNAME=kibana
+XPACK_REPORTING_ENCRYPTIONKEY=fffooooffffooofffooofofoofffooofoo
+XPACK_SECURITY_ENCRYPTIONKEY=fffooooffffooofffooofofoofffooofoo

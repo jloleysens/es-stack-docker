@@ -1,0 +1,107 @@
+Thu Dec  9 13:25:13 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     1.62%     443.3MiB / 1GiB       43.29%    53.5MB / 48.6MB   7.42GB / 6.04GB   19
+a8f6b01de786   myes      1.26%     1.102GiB / 1.938GiB   56.84%    86.8MB / 47.6MB   969MB / 883MB     111
+
+Thu Dec  9 13:25:17 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     0.92%     442.5MiB / 1GiB       43.21%    53.5MB / 48.6MB   7.42GB / 6.04GB   19
+a8f6b01de786   myes      0.43%     1.102GiB / 1.938GiB   56.83%    86.8MB / 47.6MB   969MB / 883MB     111
+
+Thu Dec  9 13:25:20 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     4.10%     442.1MiB / 1GiB       43.17%    53.5MB / 48.7MB   7.42GB / 6.04GB   19
+a8f6b01de786   myes      0.85%     1.101GiB / 1.938GiB   56.82%    86.9MB / 47.6MB   969MB / 883MB     111
+
+Thu Dec  9 13:25:23 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     1.79%     443MiB / 1GiB         43.26%    53.5MB / 48.7MB   7.42GB / 6.04GB   19
+a8f6b01de786   myes      0.54%     1.104GiB / 1.938GiB   56.93%    86.9MB / 47.7MB   970MB / 884MB     111
+
+Thu Dec  9 13:25:27 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     46.10%    528.5MiB / 1GiB       51.61%    53.6MB / 48.8MB   7.52GB / 6.05GB   77
+a8f6b01de786   myes      6.22%     1.072GiB / 1.938GiB   55.31%    87MB / 47.7MB     971MB / 885MB     112
+
+Thu Dec  9 13:25:31 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT    MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     46.48%    537.3MiB / 1GiB      52.47%    53.6MB / 48.8MB   7.55GB / 6.07GB   77
+a8f6b01de786   myes      6.18%     1.06GiB / 1.938GiB   54.66%    87MB / 47.7MB     972MB / 896MB     113
+
+Thu Dec  9 13:25:35 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O        PIDS
+6adeb25ce700   mykbn     50.38%    561.3MiB / 1GiB       54.81%    53.7MB / 48.9MB   7.6GB / 6.08GB   78
+a8f6b01de786   myes      1.13%     1.055GiB / 1.938GiB   54.43%    87MB / 47.8MB     972MB / 899MB    113
+
+Thu Dec  9 13:25:38 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     48.32%    595.5MiB / 1GiB       58.15%    53.7MB / 48.9MB   7.62GB / 6.09GB   78
+a8f6b01de786   myes      30.54%    1.039GiB / 1.938GiB   53.59%    87.1MB / 47.8MB   973MB / 912MB     113
+
+Thu Dec  9 13:25:41 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     48.48%    588.9MiB / 1GiB       57.51%    53.7MB / 49MB     7.64GB / 6.11GB   81
+a8f6b01de786   myes      5.03%     1.032GiB / 1.938GiB   53.24%    87.1MB / 47.8MB   973MB / 919MB     113
+
+Thu Dec  9 13:25:45 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     46.70%    614.6MiB / 1GiB       60.02%    53.8MB / 49MB     7.67GB / 6.12GB   81
+a8f6b01de786   myes      14.30%    1.026GiB / 1.938GiB   52.91%    87.1MB / 47.9MB   977MB / 929MB     113
+
+Thu Dec  9 13:25:49 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     45.55%    630.1MiB / 1GiB       61.53%    53.9MB / 49MB     7.69GB / 6.16GB   81
+a8f6b01de786   myes      5.62%     1.014GiB / 1.938GiB   52.30%    87.2MB / 48.1MB   980MB / 941MB     113
+
+Thu Dec  9 13:25:52 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O        PIDS
+6adeb25ce700   mykbn     41.19%    607.2MiB / 1GiB       59.29%    54.1MB / 49.1MB   7.7GB / 6.22GB   81
+a8f6b01de786   myes      0.86%     1.004GiB / 1.938GiB   51.80%    87.3MB / 48.1MB   980MB / 945MB    113
+
+Thu Dec  9 13:25:56 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     45.91%    613.7MiB / 1GiB       59.93%    54.1MB / 49.2MB   7.71GB / 6.22GB   81
+a8f6b01de786   myes      4.83%     1.005GiB / 1.938GiB   51.85%    87.3MB / 48.2MB   989MB / 949MB     113
+
+Thu Dec  9 13:25:59 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT    MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     46.27%    625.8MiB / 1GiB      61.11%    54.1MB / 49.2MB   7.73GB / 6.26GB   80
+a8f6b01de786   myes      2.19%     1010MiB / 1.938GiB   50.90%    87.4MB / 48.2MB   990MB / 956MB     113
+
+Thu Dec  9 13:26:03 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT    MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     46.03%    611MiB / 1GiB        59.67%    54.2MB / 49.2MB   7.75GB / 6.35GB   81
+a8f6b01de786   myes      0.58%     1005MiB / 1.938GiB   50.66%    87.4MB / 48.3MB   990MB / 959MB     113
+
+Thu Dec  9 13:26:06 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     46.83%    713.9MiB / 1GiB     69.72%    54.2MB / 49.3MB   7.88GB / 6.48GB   81
+a8f6b01de786   myes      0.30%     997MiB / 1.938GiB   50.23%    87.4MB / 48.3MB   990MB / 965MB     113
+
+Thu Dec  9 13:26:09 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     48.42%    730MiB / 1GiB         71.29%    54.2MB / 49.3MB   7.98GB / 6.58GB   81
+a8f6b01de786   myes      0.33%     982.9MiB / 1.938GiB   49.52%    87.4MB / 48.3MB   990MB / 976MB     113
+
+Thu Dec  9 13:26:13 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O        PIDS
+6adeb25ce700   mykbn     48.22%    653.1MiB / 1GiB       63.78%    54.3MB / 49.3MB   8.1GB / 6.74GB   19
+a8f6b01de786   myes      18.12%    983.3MiB / 1.938GiB   49.54%    87.5MB / 48.3MB   1.01GB / 991MB   113
+
+Thu Dec  9 13:26:17 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     45.77%    505.6MiB / 1GiB       49.37%    54.3MB / 49.4MB   8.11GB / 6.74GB   19
+a8f6b01de786   myes      4.20%     995.5MiB / 1.938GiB   50.16%    87.5MB / 48.4MB   1.02GB / 992MB    113
+
+Thu Dec  9 13:26:20 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     46.23%    596.4MiB / 1GiB       58.24%    54.3MB / 55.4MB   8.11GB / 6.74GB   19
+a8f6b01de786   myes      0.32%     995.4MiB / 1.938GiB   50.15%    87.5MB / 48.4MB   1.02GB / 992MB    113
+
+Thu Dec  9 13:26:23 CET 2021 - Capture docker stats...
+CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+6adeb25ce700   mykbn     0.60%     503MiB / 1GiB         49.12%    54.4MB / 55.4MB   8.11GB / 6.74GB   19
+a8f6b01de786   myes      2.28%     1.117GiB / 1.938GiB   57.65%    93.5MB / 48.5MB   1.14GB / 1.02GB   113
+
+Thu Dec  9 13:26:27 CET 2021 - Capture docker stats...
+
