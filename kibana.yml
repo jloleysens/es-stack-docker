@@ -12,8 +12,6 @@ server.host: "0.0.0.0"
 # This setting cannot end in a slash.
 #server.basePath: ""
 
-xpack.encryptedSavedObjects.encryptionKey: FOOFOOFOOFOOFOOFOOFOOFOOFOOFOOFOOFOO
-
 # Specifies whether Kibana should rewrite requests that are prefixed with
 # `server.basePath` or require that they are rewritten by your reverse proxy.
 # This setting was effectively always `false` before Kibana 6.3 and will
@@ -95,15 +93,12 @@ elasticsearch.password: "changeme"
 #  layout:
 #    type: json
 
-# Logs queries sent to Elasticsearch.
-#logging.loggers:
-#  - name: elasticsearch.queries
-#    level: debug
+# logging.root.level: debug
 
 # Logs http responses.
-#logging.loggers:
-#  - name: http.server.response
-#    level: debug
+logging.loggers:
+  - name: http.server.response
+    level: debug
 
 # Logs system usage information.
 #logging.loggers:
@@ -119,11 +114,11 @@ elasticsearch.password: "changeme"
 #i18n.locale: "en"
 
 
-xpack.security.encryptionKey: 'fffooooffffooofffooofofoofffooofoo'
 
 xpack.reporting.queue.timeout: 4m
 xpack.reporting.capture.timeouts.openUrl: 2m
 xpack.reporting.capture.timeouts.waitForElements: 2m
 xpack.reporting.capture.timeouts.renderComplete: 2m
-xpack.reporting.encryptionKey: 'fffooooffffooofffooofofoofffooofoo'
 xpack.reporting.capture.browser.chromium.disableSandbox: true
+
+xpack.encryptedSavedObjects.encryptionKey: 40275829ad149f6958e3bf94331d58151749206c4ba52c45a8031d943743bb3a
